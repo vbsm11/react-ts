@@ -14,11 +14,11 @@ function App() {
 
     return (
         <div className="App">
-            <UncontrolledOnOff/>
-            <OnOff
-                onClick={setOn}
-                isOn={on}
-            />
+            <UncontrolledOnOff onChange={setOn}/> {on.toString()}
+            {/*<OnOff*/}
+            {/*    onClick={setOn}*/}
+            {/*    isOn={on}*/}
+            {/*/>*/}
 
             <UncontrolledAccordion
                 titleValue={'Menu'}

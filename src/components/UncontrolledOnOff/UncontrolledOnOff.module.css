@@ -1,0 +1,28 @@
+.onoff {
+    margin-top: 20px;
+}
+
+.on, .off {
+    display: inline-block;
+    height: 25px;
+    width: 60px;
+    text-align: center;
+    border: 1.5px black solid;
+    margin-left: 2px;
+}
+
+.lamp {
+    display: inline-block;
+    margin-left: 5px;
+    padding: 5px;
+    border: 1.5px black solid;
+    border-radius: 50%;
+}
+
+.red {
+    background-color: red;
+}
+
+.green {
+    background-color: green;
+}

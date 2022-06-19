@@ -1,5 +1,5 @@
-import React, {useState} from "react";
-import s from "./OnOff.module.css"
+import React from 'react';
+import s from './OnOff.module.css'
 
 type OnOffPropsType = {
     onClick: (isOn: boolean) => void

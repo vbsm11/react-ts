@@ -11,36 +11,59 @@ import {
     TrackValueUncontrolledInput
 } from './components/UncontrolledInput/UncontrolledInput';
 import {ControlledCheckbox, ControlledInput, ControlledSelect} from './components/ControlledInput/ControlledInput';
+import Select from './components/Select/Select';
 
 function App() {
     const [ratingValue, setRatingValue] = useState<RatingValueType>(0);
     const [accordionCollapsed, setAcccordionCollapsed] = useState<boolean>(true);
     const [on, setOn] = useState<boolean>(false); // hook
 
+    type ValuesType = 1 | 2 | 3;
+    const [value, setValue] = useState<ValuesType>(1)
+
     return (
         <div className="App">
-            <UncontrolledOnOff onChange={setOn}/> {on.toString()}
-            {/*<OnOff*/}
-            {/*    onClick={setOn}*/}
-            {/*    isOn={on}*/}
+            {/*<UncontrolledOnOff
+            onChange={setOn}
+            /> {on.toString()}*/}
+
+            <OnOff
+                onClick={setOn}
+                isOn={on}
+            />
+
+            {/*<UncontrolledAccordion*/}
+            {/*    titleValue={'Menu'}*/}
             {/*/>*/}
 
-            <UncontrolledAccordion
-                titleValue={'Menu'}
-            />
-
             <Accordion
-                titleValue={'Menu'} onClick={setAcccordionCollapsed} collapsed={accordionCollapsed}
+                titleValue={'Users'}
+                onClick={setAcccordionCollapsed}
+                onClickHandler={(value:any) => {
+                    console.log(value)}}
+                collapsed={accordionCollapsed}
+                items={[
+                    {title:'Kolya', value: 1 },
+                    {title:'Tolya', value: 2 },
+                    {title:'Sanya', value: 3 },
+                ]}
             />
 
-            <UncontrolledRating/>
+            <Select value={value} onChange={(newValue: ValuesType) => setValue(newValue)} items={[
+                {title:'Kolya', value: 1 },
+                {title:'Tolya', value: 2 },
+                {title:'Sanya', value: 3 },
+            ]}/>
+
+            {/*<UncontrolledRating/>*/}
+
             <Rating
                 value={ratingValue}
                 onClick={setRatingValue}
             />
 
-            <TrackValueUncontrolledInput/>
-            <GetValueUncontrolledInputByButtonPress/>
+            {/*<TrackValueUncontrolledInput/>*/}
+            {/*<GetValueUncontrolledInputByButtonPress/>*/}
 
             <ControlledInput/>
             <ControlledCheckbox/>

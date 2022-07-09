@@ -10,6 +10,7 @@ import {
     GetValueUncontrolledInputByButtonPress,
     TrackValueUncontrolledInput
 } from './components/UncontrolledInput/UncontrolledInput';
+import {ControlledCheckbox, ControlledInput, ControlledSelect} from './components/ControlledInput/ControlledInput';
 
 function App() {
     const [ratingValue, setRatingValue] = useState<RatingValueType>(0);
@@ -40,6 +41,11 @@ function App() {
 
             <TrackValueUncontrolledInput/>
             <GetValueUncontrolledInputByButtonPress/>
+
+            <ControlledInput/>
+            <ControlledCheckbox/>
+            <ControlledSelect/>
+
         </div>
     );
 }

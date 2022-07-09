@@ -6,6 +6,10 @@ import {UncontrolledRating} from './components/UncontrolledRating/UncontrolledRa
 import {Rating, RatingValueType} from './components/Rating/Rating';
 import Accordion from './components/Accordion/Accordion';
 import {UncontrolledOnOff} from './components/UncontrolledOnOff/UncontrolledOnOff';
+import {
+    GetValueUncontrolledInputByButtonPress,
+    TrackValueUncontrolledInput
+} from './components/UncontrolledInput/UncontrolledInput';
 
 function App() {
     const [ratingValue, setRatingValue] = useState<RatingValueType>(0);
@@ -33,6 +37,9 @@ function App() {
                 value={ratingValue}
                 onClick={setRatingValue}
             />
+
+            <TrackValueUncontrolledInput/>
+            <GetValueUncontrolledInputByButtonPress/>
         </div>
     );
 }
